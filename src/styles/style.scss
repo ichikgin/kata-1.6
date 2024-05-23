@@ -1,0 +1,121 @@
+*{
+  box-sizing: border-box; 
+}
+*:focus {
+  outline: none;
+}
+body{
+  font-family: 'TT Lakes','Times New Roman', Times, serif;
+  max-width: 1440px;
+  margin: auto; 
+  background-color: $paleGray;
+  position: relative;
+}
+
+button{
+  border: none;
+  font-family: 'TT Lakes Medium';
+}
+
+.round-button{
+  background-color: $white;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  text-align: left;
+  // white-space: pre;
+  border-radius: 50%;
+  transition: transform 1s, box-shadow 1s, filter 2s;
+  
+}
+.round-button:hover, .round-button:focus{
+  transform: scale(1.1) translateY(-5px) ;
+  box-shadow: 2px 2px 5px 0 #34495e;
+         
+}
+.repair{
+  display: flex;
+  position: relative;
+  gap: 16px;
+}
+.link{
+  text-decoration: none;
+  color: $grey;
+  padding: 8px 10px;
+}
+
+.button-repair{
+  background: url(/src/icons/repair.svg) no-repeat center right ;
+}
+.button-checkstatus{
+  background: url(/src/icons/checkstatus.svg) no-repeat center right ;
+}
+.button-burger{
+  background: url(/src/icons/burger.svg) no-repeat center center ;
+  position: relative; 
+}
+.button-call{
+  background: url(/src/icons/call.svg) no-repeat center center ;
+}
+.button-chat{
+  background: url(/src/icons/chat.svg) no-repeat center center ;
+}
+.button-profile{
+  background: url(/src/icons/profile.svg) no-repeat center center ;
+}
+.button_cancel{
+  background: url(./icons/cancel.svg) no-repeat center center ;
+}
+.button-search{
+  background: url(./icons/search.svg) no-repeat center center ;
+  margin-left: auto;
+}                                                                                              
+
+.logo{
+  width: 115px;
+  height: auto;
+}
+.logo:hover, .logo:focus {
+  transform: rotateX(360deg);     
+}
+
+.submit{
+  background-image: url(./icons/Group.png);
+  width: 136px;
+  height: 32px;
+  align-self: flex-end;
+  border: none;
+  border-radius:20px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.submit:hover,.submit:focus {
+  box-shadow: 2px 2px 5px 0 #34495e;
+}
+.bluer{
+  position: fixed;
+  background: $bluer; 
+  width: 100vw;
+  height: 100%;
+  padding:1px; 
+  top:0;
+  left:0;
+  z-index: -1;
+  opacity: 0;
+  transition: 1s;
+}
+.bluer-open{
+  z-index: 1;
+  opacity: 1;
+}
+@media(min-width:1120px){
+  body{
+    padding-left:320px;
+  };
+
+}

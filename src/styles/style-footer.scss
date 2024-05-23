@@ -1,0 +1,31 @@
+.footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-top: 1px solid $paleGreen ;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: $grey;
+  text-align: center;
+}
+@media (min-width:768px){
+  .footer{
+    flex-direction: row;
+    align-items:flex-start;
+    
+    .copyright{
+      width: 33%;
+      text-align: start;
+    }
+
+    .privacy{
+      width: 33%
+    }
+
+    .offer{
+      width: 33%;
+      text-align: right;
+    }
+  }
+}

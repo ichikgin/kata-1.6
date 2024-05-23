@@ -1,0 +1,75 @@
+.modal-call{
+  position: absolute;
+  top: -320px;
+  right: -150px;
+  width: 320px;
+  height: 100vh;
+  background: $white;
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.20), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  z-index: -1;
+  scale:0;
+  transition: 1s;
+
+
+  .call__title{
+    font-size: 24px;
+    font-weight: bold;
+    position:relative;
+    margin:0;
+    height: 32px;
+    padding-top: 10px;
+  }
+  .call__title::before{
+    content: '';
+    background: $turquoise;
+    width: 4px;
+    height: 40px;
+    position: absolute;
+    left: -20px;
+    top: -10%;
+    border-radius: 0 10px 10px 0;
+    
+
+}
+
+  .call__form{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .call__input{
+      border: 1px solid $smoke;
+      border-radius: 5px;
+      font-size: 16px;
+      padding: 10px;
+    }
+    .call__footnote{
+      font-size: 14px;
+      .call__link{
+        color:$pink;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.modal-call--open{
+  top: 0;
+  right: 0;
+  z-index: 1;
+  scale:1;
+}
+
+@media(min-width:768px){
+  .modal-call{
+
+    .button_cancel{
+      position: absolute;
+      left: -50px;
+    }
+  };
+
+}

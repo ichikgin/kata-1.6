@@ -1,0 +1,344 @@
+
+
+.slider {
+  margin: auto;
+  margin-top: 0;
+  outline: 1px ;
+  position: relative;
+  padding-top: 0;
+  padding-left: 16px;
+  padding-bottom: 40px;
+  
+
+  .slider__title{
+    border-top: 1px solid $paleGreen ;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 16px;
+    background: linear-gradient(45deg, #F8F8F8 0%, #FFFFFF 98.61%);
+    padding: 15px 0;
+    color: $grey;
+  }
+
+  
+
+  .slider__wrapper{
+  
+    .slider__slide{
+      font-family: 'TT Lakes Medium';
+      width: 240px;
+      height: 72px;
+      padding: 16px;
+      background-color: $white;
+      border-radius: 6px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .swiper-link{
+        width: 40px;
+        height: 40px;
+        border: 2px solid $pink;
+        border-radius: 50%;
+        background: url('./icons/dropdown.svg') no-repeat center;
+      }
+
+    }
+  }
+  .swiper-pagination-bullet{
+    background-color: $paginator;
+    width: 12px;
+    height: 12px;
+  }
+  
+  
+  .button-expand{
+    background: url('./icons/expand.svg') no-repeat left center;
+    width: 145px;
+    padding: 16px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    display: none;
+   
+  }
+  .button-narrow{
+    width: 110px;
+    transform: rotateX(180deg);
+  }
+  
+  .text-narrow{
+    transform: rotateX(180deg);
+  }
+}
+.swiper::after{
+  position: absolute;
+  width: 24px;
+  height: 100%;
+  right: 0px;
+  top: 70px;
+  content: '';
+  background: linear-gradient(270deg, $paleGray 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+  z-index: 1;
+}
+
+.slider__tech{
+  .slider__wrapper{
+    .slider__slide{
+      width: 240px;
+      height: 160px;
+      align-items: flex-start;
+    }
+    
+    .swiper-link{
+      align-self: flex-end;
+    }
+  }
+  
+
+
+}
+
+.slider__price{
+  
+  .slider__subtitle{
+    display: none;
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    gap: 10px;
+    margin: 0;
+    border: none;
+    padding: 0 20px;
+    justify-content: space-between;
+
+    // *{
+    //   border: 1px solid black
+    // }
+
+    .price{
+      align-self: center ;       
+    }
+    .name-service{
+      width: 47%;
+      align-self: center ;
+    }
+    .time{
+      width: 30%;
+    }
+  }
+  
+  .slider__wrapper{
+   
+    .slider__slide{
+      width: 260px;
+      height: 200px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px
+
+    }
+    p{
+      font-size: 14px;
+      padding: 0;
+      margin: 0;
+      align-self: flex-end;
+    }
+    .time{
+      display: flex;
+      justify-content: space-between;
+      width: 230px;
+      position: relative;
+   
+      .swiper-link{
+        width: 110px;
+        height: 32px;
+        background-image: url('./icons/order.svg');
+        border-radius: 20px;
+      }
+    }
+    .time::before{
+      content: 'Срок';
+      color: $grey;
+      font-size: 14px;
+      position: absolute;
+      top: -10%;
+    }
+    .name-service::before{
+      content: 'Ремонтные услуги';
+      color: $grey;
+      font-size: 14px;
+    }
+    .price::before{
+      content: 'Цена';
+      color: $grey;
+      font-size: 14px;
+    }
+  }
+
+}
+.footnote{
+  background-color: $paleGray;
+  padding: 15px;
+  .footnote__text{
+    margin-top: 0;
+    max-width: 480px;
+  }
+
+  .footnote__link{
+    display: inline-block;
+    font-family: 'TT Lakes Medium';
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: $black;
+    position: relative;
+  }
+  .footnote__link::after{
+    width: 24px;
+    height: 24px;
+    content: '';
+    background: url('./icons/dropdown.svg') no-repeat center;
+    position: absolute;
+    
+  }
+}
+
+/*-----------media-------------------------------------------*/
+
+@media (min-width:768px){
+  .slider {
+    height: 100%;
+    width: 100%;
+    padding-left: 16px;
+    padding-bottom: 0;
+    
+    .slider__wrapper{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      overflow: hidden;
+      height: 190px;
+      align-content: baseline;
+      width: 100%;
+      .slider__slide{
+        width: 235px;
+        margin-right: 2vw;
+      }
+    }
+    .content-narrow{
+      height: 100%;
+      padding:0;
+    }
+    
+    .button-expand{
+      display:block;
+    }
+    
+  }
+  .swiper::after{
+    display: none;
+  }
+
+  .slider__tech{
+    .slider__wrapper{
+      .slider__slide{
+        height: 160px;
+        align-items: flex-start;
+      }
+      
+      .swiper-link{
+        align-self: flex-end;
+      }
+    }
+  }
+  .slider__price{
+    .slider__subtitle{
+      display: flex;
+  
+    }
+    
+    .slider__wrapper{
+      display: flex;
+      flex-direction:column;
+      flex-wrap: nowrap;
+      height: auto;
+      justify-content: flex-start;
+      background-color: $white;
+      width: auto;
+      margin-right: 15px;
+      padding:0 20px;
+      border-radius: 10px;  
+    
+      .slider__slide{
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        gap: 10px;
+        margin: 0;
+        border: none;
+        padding:  10px 0;
+        border-radius: 0;
+        border-bottom: 1px solid $smoke;
+       
+        .price{
+          align-self: center ;       
+        }
+        .name-service{
+        width: 47%;
+        align-self: center ;
+        }
+        
+      }
+      .slider__slide:last-child{
+        border: none
+      }
+
+      p{
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+        align-self: center;
+      }
+      .time{
+        display: flex;
+        justify-content: space-between;
+        width: 30%;
+        position: relative;
+    
+        .swiper-link{
+          width: 110px;
+          height: 32px;
+          background-image: url('./icons/order.svg');
+          border-radius: 20px;
+        }
+      }
+      .time::before{
+        display: none;
+      }
+      .name-service::before{
+        display: none;
+      }
+      .price::before{
+        display: none;
+      }
+      
+    }
+  }
+}
+
+
+
+  
+
+@media (min-width:1120px){
+  .slider {
+    .slider__slide{
+      margin-right: 20px;
+    }
+  }
+
+
+}

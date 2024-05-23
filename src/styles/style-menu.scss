@@ -1,0 +1,134 @@
+
+.modal-menu{
+    width: 320px;
+    background: $white;
+    box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.20), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100vh;
+    position: absolute;
+    top:-370px;
+    left: -370px;
+    z-index: 1;
+    scale:0;
+    transition: 1s;
+
+    .link{
+        color:$black;
+        padding: 0;
+    }
+    .link_checked{
+        color: $grey;
+    }
+
+    .aside-menu__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap:15px;
+    }
+    .aside-menu__nav{ 
+
+        .nav-list{
+            display: flex;
+            list-style-type: none;
+            height: auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 30px;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 0;
+            margin-bottom: 0;
+
+            
+            .nav-list__item{
+                font-size: 16px;
+                font-weight: 500;
+                position: relative; 
+                transition: 0.5s;
+
+            }
+            .nav-list__item:hover, .nav-list__item:focus {
+                transform: translate(2%);
+            }
+            
+        
+            .nav-item_checked::before{
+                content: '';
+                background: url(./icons/highlight_for_aside.svg) no-repeat;
+                width: 4px;
+                height: 32px;
+                position: absolute;
+                left:-25px;
+            }
+            
+        }
+
+        
+    }
+    .footer__aside-menu{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        height: 164px;
+        margin-top:auto;
+
+        .footer__contact-menu{
+            display:flex;
+            gap: 15px;
+        }
+        .footer__contacts{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            gap:10px;
+
+            .contacts__number{
+                font-size: 24px;
+                font-weight: 700;
+            
+            }
+        }
+        .footer__lang-list{
+            display: flex;
+            list-style-type: none;
+            gap: 10px;
+            justify-content: flex-start;
+            margin: 0;
+            padding: 0;
+           
+        }
+        
+    }
+}
+.modal-menu--open{
+    top:0;
+    left: 0;
+    scale: 1
+}
+
+@media(min-width:1120px){
+    .modal-menu{
+        top:0;
+        left: 0;
+        scale: 1;
+        box-shadow: none;
+        height: 100%;
+        z-index: 0;
+
+        .aside-menu__header{
+            .button_cancel{
+                display: none;
+            }
+        }
+
+        .footer__aside-menu{
+            margin-top: 200px;
+        }
+        
+    }
+
+}
